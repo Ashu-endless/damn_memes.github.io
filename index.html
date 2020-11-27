@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" type="text/css" media="all" href="css/reset.css" /> -->
+    <!-- reset css -->
+    <!-- <link rel="preload" href="/assets/Pacifico-Bold.woff2" as="font" type="font/woff2" crossorigin> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <!-- title -->
+    <nav id="nav" class="nav">
+        <h1> interact</h1>
+    </nav>
+
+    <!-- editing_options -->
+    <div>
+        <!-- <h1 onclick="dragit()">move</h1> -->
+        <ul id="editing_options" class="editing_options btn-grad scroll">
+            <li id="text">
+                <ion-icon name="text-outline"></ion-icon>
+                Text
+            </li>
+            <li id="brush">
+
+                <ion-icon name="brush-outline"></ion-icon>
+                Brush
+            </li>
+
+            <li id="filters">
+                <ion-icon name="contract-outline"></ion-icon>
+                filters
+            </li>
+            <li id="add_obj">
+                <ion-icon name="add-circle-sharp"></ion-icon> Add
+            </li>
+            <li id="sheet_st_btn">
+                <ion-icon name="settings-sharp"></ion-icon> settings
+            </li>
+            <li id="bg_btn">
+                Background
+            </li>
+            <li>Effects</li>
+
+        </ul>
+    </div>
+
+
+    <div>
+        <ul class="sec_opt_ul" id="brush_opt_ul">
+            <li class="sec_opt_li">
+                <label for="brush_options">brush mode</label>
+                <select id="brush_options" name="brush_options">
+    <option value="Pencil">Pencil</option>
+    <option value="Circle">Circle</option>
+    <option value="Spray">Spray</option>
+    
+  </select>
+            </li>
+            <li class="sec_opt_li">
+                <label for="brush_width">Brush widht</label>
+                <input type="range" min="1" value="1" max='100' name="brush_width" id="brush_width">
+            </li>
+            <li class="sec_opt_li">
+                <label for="brush_color"> brush color</label>
+                <input value="rgba(255,160,0,0.5)" name="brush_color" id="brush_color" data-jscolor="">
+
+            </li>
+            <li class="sec_opt_li">
+                Texture brush <input type="file" name="" id="texture_brush">
+            </li>
+            <li class="sec_opt_li">
+                shadow color<input value="rgba(255,160,0,0.5)" name="brush_color" data-jscolor="">
+            </li>
+            <li class="sec_opt_li">
+                shadow width <input type="range" name="" id="shadowwidth" min="0" max="50" step="1" value="0">
+
+            </li>
+            <li class="sec_opt_li">
+                shadow offset <input type="range" name="" id="shadowoffset" min="0" max="50" step="1" value="0">
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- -------------------------------TEXT----------------------------------- -->
+    <div>
+        <ul class="sec_opt_ul" id="text_opt_ul">
+            <li class="sec_opt_li" id="addtext">
+                Add textbox
+
+            </li>
+            <li class="sec_opt_li"> Font
+                <select id="font_options" name="font_options">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                  </select>
+
+            </li>
+            <li class="sec_opt_li" id="text_color_li">
+                Text color <input value="rgba(255,160,0,1)" id="text_color" data-jscolor="">
+            </li>
+            <li class="sec_opt_li" id="text_bg_li">
+                Text bg <input value="rgba(255,160,0,1)" id="text_bg" data-jscolor="">
+            </li>
+            <li class="sec_opt_li">
+                Stroke color <input value="rgba(255,160,0,1)" class="strokecolor" data-jscolor="">
+            </li>
+            <li class="sec_opt_li">
+                stroke-width <input type="range" class="strokewidth" value="0" min="0" max="5" step="1"> </li>
+
+        </ul>
+    </div>
+
+    <!-- ----------------------------filters----------------------- -->
+    <div>
+        <ul class="sec_opt_ul" id="filters_opt_ul">
+            <li class="sec_opt_li">
+                brightness <input type="range" name="" id="brightness" value="0" min="0" max="1" step="0.1"> <span>10</span>
+            </li>
+            <li class="sec_opt_li">
+                Noise<input type="range" name="" id="noise" value="0" min="0" max="1000" step="10">
+            </li>
+            <li class="sec_opt_li">
+                Blur <input type="range" id="blur" value="0" min="0" max="1" step="0.1">
+            </li>
+            <li class="sec_opt_li">
+                Contrast <input type="range" id="contrast" value="0" min="0" max="1" step="0.1">
+            </li>
+            <li class="sec_opt_li">
+                Pixelete<input type="range" name=" " id="pixelate" value="0" min="1" max="10" step="1">
+            </li>
+            <li class="sec_opt_li">
+                Satuaration <input type="range" id="saturation" value="0" min="0" max="1" step="0.1">
+            </li>
+            <li class="sec_opt_li">
+                Hue <input type="range" id="hue" value="0" min="0" max="1" step="0.1">
+            </li>
+            <li class="sec_opt_li">
+                Invert <input type="checkbox" id="invert">
+            </li>
+        </ul>
+    </div>
+
+    <!-- --------------------toolbox-------------------- -->
+    <div>
+        <ul id="toolbox">
+            <li id="delete_object" class="fas fa-trash"></li>
+            <li id="clear_sheet">delete all</li>
+            <li id="brng_frwd">
+                <i class="fas fa-bring-front"></i>
+            </li>
+            <li id="brng_bkwd">
+                bring back
+            </li>
+
+            <li id="copy_object"> copy</li>
+            <li>
+                <a id="download" download="myImage.jpg" href=" " onclick="download_img(this); ">
+                    <ion-icon name="download-outline"></ion-icon>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+
+    <!-- --------------------------------------add--------------------- -->
+    <div>
+        <ul class="sec_opt_ul" id="add_obj_ul">
+            <li class="sec_opt_li">
+                add from device <input type="file" name="image_object" id="img_inp">
+            </li>
+            <li class="sec_opt_li"> Shapes
+                <div id="shapes_div">
+                    <div id="rect" class="shapes"></div>
+                    <div id="triangle" class="shapes"></div>
+                    <div class="shapes" id="circle"></div>
+                </div>
+            </li>
+            <li id="searched_imaged" class="sec_opt_li" style="overflow: auto; max-height: 200px;">
+                <input type="search" name="" id="search_image" placeholder="search images">
+            </li>
+            <li class="sec_opt_li"></li>
+            <!-- <img class="objects" src="/objects/abc.jpeg" alt="">
+                <img class="objects" src="/objects/butterfly.jpeg" alt="">
+                <img class="objects" src="/objects/heart.jpeg" alt="">
+                <img class="objects" src="/objects/fun.jpeg" alt="">
+                <img class="objects" src="/objects/hair.jpeg" alt=""> -->
+            </li>
+        </ul>
+    </div>
+
+    <!-- -------------------------------sheet size------------------------ -->
+    <div>
+
+        <ul id="sheet_settings" class="sec_opt_ul">
+
+            <li class="sec_opt_li">
+                <div class="grid-container">
+                    <div class="item1 items ">sheet size</div>
+                    <div id="ff" class="items"> 1:4</div>
+                    <div id="sn" class="items">16:9</div>
+                    <div id="oo" class="items">1:1</div>
+
+                </div>
+            </li>
+            <li class="sec_opt_li">
+                <div class="grid-container">
+                    <div class=" items" style="grid-column: 1 / span 2;">Custom size</div>
+                    <br>
+                    <div class="items"> height</div>
+                    <input type="text" id="custom_height" name="">
+                    <br>
+                    <div class="items">width</div>
+                    <input type="text" id="custom_width" name="">
+
+                </div>
+
+            </li>
+
+        </ul>
+        <!-- <table id="sheet_settings">
+            <tr>
+                <th colspan="3">
+                    sheet size
+                </th>
+                <tr>
+                    <td id="oo">
+                        1:1
+                    </td>
+                    <td id="sn">
+                        16:9
+                    </td>
+                    <td id="ff">
+                        4:5
+                    </td>
+
+                </tr>
+            </tr>
+
+            <tr>
+                <th>custom size </th>
+                <td> Height <input type="text" name="" id=""></td>
+                <td> Width <input type="text" name="" id=""></td>
+            </tr>
+        </table> -->
+    </div>
+
+    <!-- --------------------background-------------------- -->
+    <div>
+        <ul class="sec_opt_ul" id="background_ul">
+            <li class="sec_opt_li">
+                <!-- <button id="pri " data-jscolor="{preset: 'large dark', value: 'rgba(44,175,254,0.8)'} "> colored bg </button> -->
+                color bg <input id="color_bg" data-jscolor="" value="rgba(44,175,254,0.5) ">
+                <!-- <button data-jscolor="{preset: 'large dark', value: 'rgba(44,175,254,0.8)'} "></button> -->
+            </li>
+            <li class="sec_opt_li">
+                image from device <input type="file" accept="" id="bg_img_input" name="bg_img_inp">
+            </li>
+            <li id="exp">
+                experiment
+            </li>
+        </ul>
+    </div>
+    <!-- --------------------------------------shape--------------------- -->
+    <div>
+        <ul class="sec_opt_ul" id="shape_ul">
+            <li class="sec_opt_li">
+                fill
+            </li>
+            <li class="sec_opt_li">
+                stroke-color <button id="check" data-jscolor="{format:'rgba'}"></button>
+            </li class="sec_opt_li">
+            <li>stroke-width <input type="range" class="strokewidth" value="0" min="0" max="5" step="1"> </li>
+            <li class="sec_opt_li">
+                opacity
+            </li>
+
+        </ul>
+    </div>
+
+
+
+
+
+    <canvas id="mycanvas"> </canvas>
+
+    <!-- <canvas id="expcn ">
+
+    </canvas>
+    <div id="selected-color "></div>
+    <div id="hovered-color "></div>
+
+ -->
+
+
+
+
+
+
+    <div class="templates_box">
+        <ul class="templates">
+            <li>
+                <img draggable="true" class="meme_templates" src="https://indianmemetemplates.com/storage/Quiz-Kid.jpg" alt="">
+            </li>
+            <li> <img draggable="true" class="meme_templates" src="https://64.media.tumblr.com/470c5a13f393b9ed2f65afc0fb29128f/tumblr_pmsm3szW531u4g180_540.png" alt="">
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- <h1 onclick="active() "> this is active</h1> -->
+</body>
+
+<script src="fabric.min.js"></script>
+<!-- <script type="module " src="crtintr.js "></script> -->
+<script src="test2.js"></script>
+<script src="jscolor.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+<script>
+    jscolor.presets.default = {
+
+        format: 'rgba',
+        required: false,
+        padding: 4,
+        closeButton: true,
+        buttonColor: 'rgba(51,75,255,1)',
+        controlBorderColor: 'rgba(146,112,187,1)',
+        shadowColor: 'rgba(238,179,255,0.2)',
+
+    };
+</script>
+
+
+</html>
