@@ -1,7 +1,7 @@
 const canvas = new fabric.Canvas('mycanvas', {
     perPixelTargetFind: true,
-    height: 250,
-    width: 250,
+    height: 300,
+    width: 300,
     selection: false,
     stopContextMenu: false,
 
@@ -59,10 +59,13 @@ bg_img_input.addEventListener('change', function() {
     });
 
 });
-const search_image = document.getElementById('search_image');
+var search_image = document.getElementById('search_image');
+var search_image_bg = document.getElementById('search_image_bg');
 // const fetch = require('node-fetch');
 // global.fetch = fetch;
-const searching = () => {
+var searched_imaged = document.getElementById('searched_imaged');
+var searched_imaged_bg = document.getElementById('searched_imaged_bg');
+const searching = (li) => {
     let clientId = 'm-54i_kwIskicvXmUdjrUajXwLXroSSNKTsHBmPorpU';
     let query = search_image.value
     console.log(query)
@@ -81,35 +84,46 @@ const searching = () => {
 
                 img.src = photo.urls.regular
 
-                var searched_imaged = document.getElementById('searched_imaged');
-                searched_imaged.append(img)
+                if (bg_stmode) {
+                    searched_imaged_bg.append(img)
+                } else {
+                    searched_imaged.append(img)
+                }
+
+
                 console.log(img)
                     // -------------object when searched
 
                 var objects = document.getElementsByClassName('objects');
                 for (let object of objects) {
                     object.onclick = (e) => {
-                        console.log(e.target.src)
+
                         let img_to_edit = e.target.src
                             // fabric.Image.fromURL(img_to_edit, function(img, isError) {
                             //     img.set({ originX: 'left', originY: 'top', crossOrigin: 'anonymous' });
                             //     img.scaleToWidth(parseInt(canvas.width)).scaleToHeight(parseInt(canvas.height))
                             //     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
                             // });
-                        canvas.setBackgroundImage(img_to_edit, canvas.renderAll.bind(canvas), {
-                            originX: 'left',
-                            originY: 'top',
-                            crossOrigin: 'anonymous',
+                        if (bg_stmode) {
 
-                        });
-                        // canvas.backgroundImage.scaleToWidth(canvas.width / 2).scaleToHeight(canvas.height / 2)
+
+                            canvas.setBackgroundImage(img_to_edit, canvas.renderAll.bind(canvas), {
+                                originX: 'left',
+                                originY: 'top',
+                                crossOrigin: 'anonymous',
+
+                            });
+                        } else {
+                            ""
+                        }
+                        // img_to_edit.scaleToWidth(canvas.width / 2).scaleToHeight(canvas.height / 2)
 
 
 
                         // fabric.Image.fromURL(img_to_edit,
                         //     function(myImg) {
 
-                        //         var img = myImg.scaleToWidth(canvas.width / 2).scaleToHeight(canvas.height / 2)
+                        // var img = myImg.scaleToWidth(canvas.width / 2).scaleToHeight(canvas.height / 2)
 
 
                         //         canvas.add(img);
@@ -123,6 +137,7 @@ const searching = () => {
 }
 
 search_image.addEventListener('input', searching);
+search_image_bg.addEventListener('input', searching);
 
 const img_input = document.getElementById('img_inp');
 var objects = document.getElementsByClassName('objects');

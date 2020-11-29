@@ -22,7 +22,7 @@
 
     <!-- title -->
     <nav id="nav" class="nav">
-        <h1> interact</h1>
+        <h1> Damn memes</h1>
     </nav>
 
     <!-- editing_options -->
@@ -99,10 +99,11 @@
     <div>
         <ul class="sec_opt_ul" id="text_opt_ul">
             <li class="sec_opt_li" id="addtext">
-                Add textbox
+                <div class="text"> Add textbox</div>
 
             </li>
-            <li class="sec_opt_li"> Font
+            <li class="sec_opt_li">
+                <div class="text">Font</div>
                 <select id="font_options" name="font_options">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
@@ -112,16 +113,16 @@
 
             </li>
             <li class="sec_opt_li" id="text_color_li">
-                Text color <input value="rgba(255,160,0,1)" id="text_color" data-jscolor="">
+                <div class="text">Text color</div> <input value="rgba(255,160,0,1)" id="text_color" data-jscolor="">
             </li>
             <li class="sec_opt_li" id="text_bg_li">
-                Text bg <input value="rgba(255,160,0,1)" id="text_bg" data-jscolor="">
+                <div class="text">Text bg </div><input value="rgba(255,160,0,1)" id="text_bg" data-jscolor="">
             </li>
             <li class="sec_opt_li">
-                Stroke color <input value="rgba(255,160,0,1)" class="strokecolor" data-jscolor="">
+                <div class="text">Stroke color</div> <input value="rgba(255,160,0,1)" class="strokecolor" data-jscolor="">
             </li>
             <li class="sec_opt_li">
-                stroke-width <input type="range" class="strokewidth" value="0" min="0" max="5" step="1"> </li>
+                <div class="text">stroke-width </div><input type="range" class="strokewidth" value="0" min="0" max="5" step="1"> </li>
 
         </ul>
     </div>
@@ -130,7 +131,7 @@
     <div>
         <ul class="sec_opt_ul" id="filters_opt_ul">
             <li class="sec_opt_li">
-                brightness <input type="range" name="" id="brightness" value="0" min="0" max="1" step="0.1"> <span>10</span>
+                brightness <input type="range" name="" id="brightness" value="0" min="0" max="1" step="0.1">
             </li>
             <li class="sec_opt_li">
                 Noise<input type="range" name="" id="noise" value="0" min="0" max="1000" step="10">
@@ -192,16 +193,16 @@
                     <div class="shapes" id="circle"></div>
                 </div>
             </li>
-            <li id="searched_imaged" class="sec_opt_li" style="overflow: auto; max-height: 200px;">
+            <li id="searched_imaged" class="sec_opt_li" style="overflow-y:auto;min-width: 130px; max-height: 400px; max-width: width 200px;">
                 <input type="search" name="" id="search_image" placeholder="search images">
             </li>
-            <li class="sec_opt_li"></li>
-            <!-- <img class="objects" src="/objects/abc.jpeg" alt="">
+            <!-- <li class="sec_opt_li"></li>
+             <img class="objects" src="/objects/abc.jpeg" alt="">
                 <img class="objects" src="/objects/butterfly.jpeg" alt="">
                 <img class="objects" src="/objects/heart.jpeg" alt="">
                 <img class="objects" src="/objects/fun.jpeg" alt="">
-                <img class="objects" src="/objects/hair.jpeg" alt=""> -->
-            </li>
+                <img class="objects" src="/objects/hair.jpeg" alt=""> 
+            </li> -->
         </ul>
     </div>
 
@@ -271,6 +272,9 @@
             </li>
             <li class="sec_opt_li">
                 image from device <input type="file" accept="" id="bg_img_input" name="bg_img_inp">
+            </li>
+            <li id="searched_imaged_bg" class="sec_opt_li" style="overflow-y:auto;min-width: 130px; max-height: 400px; max-width: width 200px;">
+                <input type="search" name="" id="search_image_bg" placeholder="search images">
             </li>
             <li id="exp">
                 experiment

@@ -183,8 +183,8 @@ a {
 }
 
 .objects {
-    width: 60px;
-    height: 60px;
+    width: 180px;
+    height: 150px;
     padding: 5px;
 }
 
@@ -246,6 +246,13 @@ td {
     left: 40vw;
 }
 
+.text {
+    /* background-color: yellow; */
+    width: 174px;
+    height: auto;
+    border: 1px solid blue
+}
+
 #toolbox li {
     padding: 10px;
 }
@@ -269,7 +276,8 @@ td {
     }
     .canvas-container {
         position: relative;
-        left: 20px;
+        left: 10vw;
+        top: 2vh
     }
     .sec_opt_ul,
     table {
