@@ -289,10 +289,12 @@ td {
         overflow: scroll;
         padding: 0px;
         left: 0px;
+        touch-action: pan-right;
     }
     .sec_opt_li {
         padding: 4px;
         width: auto;
+        touch-action: pan-right;
     }
     #toolbox {
         left: 40px;
